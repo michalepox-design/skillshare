@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,6 +45,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            cursor: pointer;
         }
 
         .nav-links {
@@ -73,10 +73,21 @@
             text-decoration: none;
             font-weight: bold;
             transition: transform 0.3s;
+            cursor: pointer;
         }
 
         .cta-button:hover {
             transform: scale(1.05);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         /* Hero Section */
@@ -119,6 +130,7 @@
             font-size: 1.1rem;
             transition: all 0.3s;
             border: 2px solid white;
+            cursor: pointer;
         }
 
         .btn-primary:hover {
@@ -137,12 +149,163 @@
             font-size: 1.1rem;
             border: 2px solid white;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .btn-secondary:hover {
             background: white;
             color: #667eea;
             transform: translateY(-3px);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background: white;
+            margin: 3% auto;
+            padding: 0;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 20px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideDown 0.3s;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: transform 0.3s;
+        }
+
+        .close:hover {
+            transform: scale(1.2);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .lecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .lecture-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .lecture-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .lecture-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .lecture-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .lecture-duration {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .lecture-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Video Player */
+        .video-container {
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .video-player {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            color: #667eea;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
         }
 
         /* Features Grid */
@@ -254,6 +417,7 @@
             display: flex;
             background: #f8f9fa;
             border-bottom: 2px solid #e9ecef;
+            flex-wrap: wrap;
         }
 
         .demo-tab {
@@ -266,6 +430,7 @@
             border: none;
             background: transparent;
             font-size: 1rem;
+            min-width: 150px;
         }
 
         .demo-tab:hover {
@@ -340,6 +505,27 @@
         .pricing-content {
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .currency-toggle {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .currency-toggle button {
+            background: white;
+            border: 2px solid #667eea;
+            padding: 0.5rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .currency-toggle button.active {
+            background: #667eea;
+            color: white;
         }
 
         .pricing-cards {
@@ -556,6 +742,10 @@
                 display: none;
             }
 
+            .menu-toggle {
+                display: block;
+            }
+
             .skill-path {
                 flex-direction: column;
             }
@@ -565,6 +755,27 @@
                 right: auto;
                 bottom: -2rem;
             }
+
+            .modal-content {
+                width: 95%;
+                margin: 5% auto;
+            }
+
+            .demo-content {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            display: none;
+            animation: fadeIn 0.3s;
         }
     </style>
 </head>
@@ -572,7 +783,7 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">
+            <div class="logo" onclick="window.location.reload()">
                 🚀 SkillShift
             </div>
             <ul class="nav-links">
@@ -581,7 +792,8 @@
                 <li><a href="#demo">Demo</a></li>
                 <li><a href="#pricing">Pricing</a></li>
             </ul>
-            <a href="#signup" class="cta-button">Start Learning Free</a>
+            <button class="menu-toggle">☰</button>
+            <a class="cta-button" onclick="openFreeLectures()">Start Learning Free</a>
         </nav>
     </header>
 
@@ -590,10 +802,121 @@
         <h1>Learn the Skills of Tomorrow, Updated Overnight</h1>
         <p>The adaptive AI learning platform that evolves with industry changes in real-time</p>
         <div class="hero-buttons">
-            <a href="#signup" class="btn-primary">Get Started Free</a>
+            <button class="btn-primary" onclick="openFreeLectures()">Get Started Free</button>
             <a href="#demo" class="btn-secondary">See Demo</a>
         </div>
     </section>
+
+    <!-- Free Lectures Modal -->
+    <div id="lecturesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🎓 Free Lectures - Start Learning Now!</h2>
+                <button class="close" onclick="closeModal('lecturesModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p style="color: #666; margin-bottom: 1rem;">Choose a free lecture to begin your learning journey. No signup required!</p>
+                
+                <h3 style="margin-top: 2rem; color: #667eea;">📊 Data Skills</h3>
+                <div class="lecture-grid">
+                    <div class="lecture-card" onclick="playLecture('Python Basics', 'data')">
+                        <div class="lecture-icon">🐍</div>
+                        <div class="lecture-title">Python for Beginners</div>
+                        <div class="lecture-duration">⏱️ 12 minutes</div>
+                        <span class="lecture-badge">FREE</span>
+                    </div>
+                    <div class="lecture-card" onclick="playLecture('SQL Introduction', 'data')">
+                        <div class="lecture-icon">🗄️</div>
+                        <div class="lecture-title">SQL Introduction</div>
+                        <div class="lecture-duration">⏱️ 15 minutes</div>
+                        <span class="lecture-badge">FREE</span>
+                    </div>
+                    <div class="lecture-card" onclick="playLecture('Data Visualization', 'data')">
+                        <div class="lecture-icon">📈</div>
+                        <div class="lecture-title">Data Visualization Basics</div>
+                        <div class="lecture-duration">⏱️ 10 minutes</div>
+                        <span class="lecture-badge">FREE</span>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem; color: #667eea;">🤖 AI Skills</h3>
+                <div class="lecture-grid">
+                    <div class="lecture-card" onclick="playLecture('AI Fundamentals', 'ai')">
+                        <div class="lecture-icon">🧠</div>
+                        <div class="lecture-title">What is Artificial Intelligence?</div>
+                        <div class="lecture-duration">⏱️ 14 minutes</div>
+                        <span class="lecture-badge">FREE</span>
+                    </div>
+                    <div class="lecture-card" onclick="playLecture('Prompt Engineering', 'ai')">
+                        <div class="lecture-icon">💬</div>
+                        <div class="lecture-title">Prompt Engineering 101</div>
+                        <div class="lecture-duration">⏱️ 18 minutes</div>
+                        <span class="lecture-badge">FREE</span>
+                    </div>
+                    <div class="lecture-card" onclick="playLecture('ChatGPT Mastery', 'ai')">
+                        <div class="lecture-icon">🤖</div>
+                        <div class="lecture-title">Using ChatGPT Effectively</div>
+                        <div class="lecture-duration">⏱️ 16 minutes</div>
+                        <span class="lecture-badge">FREE</span>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem; color: #667eea;">🌍 Climate Tech</h3>
+                <div class="lecture-grid">
+                    <div class="lecture-card" onclick="playLecture('Climate Change Basics', 'climate')">
+                        <div class="lecture-icon">🌡️</div>
+                        <div class="lecture-title">Understanding Climate Change</div>
+                        <div class="lecture-duration">⏱️ 13 minutes</div>
+                        <span class="lecture-badge">FREE</span>
+                    </div>
+                    <div class="lecture-card" onclick="playLecture('Carbon Footprint', 'climate')">
+                        <div class="lecture-icon">👣</div>
+                        <div class="lecture-title">Carbon Footprint Calculation</div>
+                        <div class="lecture-duration">⏱️ 11 minutes</div>
+                        <span class="lecture-badge">FREE</span>
+                    </div>
+                    <div class="lecture-card" onclick="playLecture('Renewable Energy', 'climate')">
+                        <div class="lecture-icon">⚡</div>
+                        <div class="lecture-title">Renewable Energy Overview</div>
+                        <div class="lecture-duration">⏱️ 15 minutes</div>
+                        <span class="lecture-badge">FREE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="videoTitle">Lecture Title</h2>
+                <button class="close" onclick="closeModal('videoModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="video-container">
+                    <div class="video-player">
+                        <button class="play-button">▶</button>
+                        <p>Video player placeholder</p>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">In the full version, this will be a real video lecture</p>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <h3>📝 Lecture Notes</h3>
+                    <p id="lectureDescription" style="color: #666; margin: 1rem 0; line-height: 1.8;">
+                        This is a comprehensive introduction to the topic. You'll learn the fundamentals and get hands-on practice.
+                    </p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+                        <button class="btn-primary" onclick="alert('Download feature coming soon!')">📥 Download Notes</button>
+                        <button class="btn-secondary" onclick="alert('Quiz feature coming soon!')">📝 Take Quiz</button>
+                    </div>
+                </div>
+                <div class="success-message" id="successMessage">
+                    ✅ Great! You've started your learning journey. Continue with more free lectures or upgrade to Pro for unlimited access!
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Stats Section -->
     <section class="stats">
@@ -637,261 +960,4 @@
                 <p>Built-in mentor that explains concepts, helps with assignments, generates quizzes, and tracks your progress.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">💼</div>
-                <h3>Job-Market Scanner</h3>
-                <p>Scans thousands of job postings daily to determine what skills employers need right now and updates lessons accordingly.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔬</div>
-                <h3>Real-World Labs</h3>
-                <p>Hands-on sandboxes for data analytics, AI tools, and climate tech. Practice with real datasets and tools.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🗺️</div>
-                <h3>SkillMap Engine</h3>
-                <p>Visual progress map showing everything you've mastered and what to learn next. Perfect for portfolio building.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Enterprise Dashboard</h3>
-                <p>For companies: track employee skill growth, identify gaps, build custom pathways, and benchmark against industry standards.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Microlearning</h3>
-                <p>5-10 minute lessons designed to fit into your daily work schedule. Learn continuously without disruption.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎮</div>
-                <h3>Gamified Experience</h3>
-                <p>Earn badges, XP points, maintain streaks, and compete on leaderboards. Make learning engaging and fun.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section id="how-it-works" class="how-it-works">
-        <div class="how-it-works-content">
-            <h2 class="section-title">How SkillShift Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Take Assessment</h3>
-                    <p>Quick skill assessment to understand your current level and learning goals.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Get Personalized Path</h3>
-                    <p>AI creates your unique learning journey based on your role, industry, and goals.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Learn & Practice</h3>
-                    <p>Engage with updated content, hands-on labs, and real-world projects.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Earn Certifications</h3>
-                    <p>Complete modules and earn industry-recognized micro-certifications.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Demo -->
-    <section id="demo" class="demo-section">
-        <h2 class="section-title">Experience SkillShift</h2>
-        <div class="demo-container">
-            <div class="demo-tabs">
-                <button class="demo-tab active" onclick="showDemo('data')">Data Skills</button>
-                <button class="demo-tab" onclick="showDemo('ai')">AI Skills</button>
-                <button class="demo-tab" onclick="showDemo('climate')">Climate Tech</button>
-            </div>
-            <div class="demo-content">
-                <div id="data-demo" class="demo-panel active">
-                    <h3>📊 Data Skills Learning Path</h3>
-                    <div class="skill-path">
-                        <div class="skill-node">
-                            <strong>Python Basics</strong>
-                            <div>2 weeks</div>
-                        </div>
-                        <div class="skill-node">
-                            <strong>SQL Mastery</strong>
-                            <div>3 weeks</div>
-                        </div>
-                        <div class="skill-node">
-                            <strong>Data Viz</strong>
-                            <div>2 weeks</div>
-                        </div>
-                        <div class="skill-node">
-                            <strong>Analytics</strong>
-                            <div>4 weeks</div>
-                        </div>
-                    </div>
-                    <p style="margin-top: 2rem;"><strong>Your Progress:</strong></p>
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 65%;">65% Complete</div>
-                    </div>
-                    <p style="margin-top: 1rem; color: #666;">
-                        <strong>Next Lesson:</strong> Advanced SQL Joins - Updated 2 days ago based on latest industry practices
-                    </p>
-                </div>
-                <div id="ai-demo" class="demo-panel">
-                    <h3>🤖 AI Skills Learning Path</h3>
-                    <div class="skill-path">
-                        <div class="skill-node">
-                            <strong>AI Fundamentals</strong>
-                            <div>2 weeks</div>
-                        </div>
-                        <div class="skill-node">
-                            <strong>Prompt Engineering</strong>
-                            <div>1 week</div>
-                        </div>
-                        <div class="skill-node">
-                            <strong>ML Basics</strong>
-                            <div>4 weeks</div>
-                        </div>
-                        <div class="skill-node">
-                            <strong>Ethical AI</strong>
-                            <div>2 weeks</div>
-                        </div>
-                    </div>
-                    <p style="margin-top: 2rem;"><strong>Your Progress:</strong></p>
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 40%;">40% Complete</div>
-                    </div>
-                    <p style="margin-top: 1rem; color: #666;">
-                        <strong>Next Lesson:</strong> GPT-4 Best Practices - Added this week based on latest research
-                    </p>
-                </div>
-                <div id="climate-demo" class="demo-panel">
-                    <h3>🌍 Climate Tech Learning Path</h3>
-                    <div class="skill-path">
-                        <div class="skill-node">
-                            <strong>Carbon Accounting</strong>
-                            <div>3 weeks</div>
-                        </div>
-                        <div class="skill-node">
-                            <strong>Climate Data</strong>
-                            <div>3 weeks</div>
-                        </div>
-                        <div class="skill-node">
-                            <strong>Renewable Energy</strong>
-                            <div>4 weeks</div>
-                        </div>
-                        <div class="skill-node">
-                            <strong>ESG Reporting</strong>
-                            <div>2 weeks</div>
-                        </div>
-                    </div>
-                    <p style="margin-top: 2rem;"><strong>Your Progress:</strong></p>
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 25%;">25% Complete</div>
-                    </div>
-                    <p style="margin-top: 1rem; color: #666;">
-                        <strong>Next Lesson:</strong> Net Zero Strategies - Updated today with COP28 outcomes
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="pricing-content">
-            <h2 class="section-title">Choose Your Plan</h2>
-            <div class="pricing-cards">
-                <div class="pricing-card">
-                    <div class="plan-name">Free</div>
-                    <div class="plan-price">$0</div>
-                    <div class="plan-period">forever</div>
-                    <ul class="plan-features">
-                        <li>Access to basic modules</li>
-                        <li>5 lessons per month</li>
-                        <li>Community support</li>
-                        <li>Progress tracking</li>
-                    </ul>
-                    <a href="#signup" class="btn-secondary">Get Started</a>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="plan-name">Pro</div>
-                    <div class="plan-price">$29</div>
-                    <div class="plan-period">per month</div>
-                    <ul class="plan-features">
-                        <li>Unlimited lessons</li>
-                        <li>AI Tutor access</li>
-                        <li>All sandboxes</li>
-                        <li>Certificates</li>
-                        <li>Priority support</li>
-                        <li>Job market insights</li>
-                    </ul>
-                    <a href="#signup" class="btn-primary">Start Free Trial</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="plan-name">Enterprise</div>
-                    <div class="plan-price">Custom</div>
-                    <div class="plan-period">contact us</div>
-                    <ul class="plan-features">
-                        <li>Everything in Pro</li>
-                        <li>Team dashboard</li>
-                        <li>Custom pathways</li>
-                        <li>White-label option</li>
-                        <li>Dedicated support</li>
-                        <li>API access</li>
-                    </ul>
-                    <a href="#contact" class="btn-secondary">Contact Sales</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="signup" class="cta-section">
-        <h2>Ready to Future-Proof Your Skills?</h2>
-        <p>Join thousands of professionals learning the skills of tomorrow</p>
-        <div style="max-width: 500px; margin: 2rem auto;">
-            <form id="signup-form" style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <input type="email" placeholder="Enter your email" required 
-                       style="flex: 1; padding: 1rem; border-radius: 25px; border: none; font-size: 1rem; min-width: 250px;">
-                <button type="submit" class="btn-primary" style="border: none; cursor: pointer;">
-                    Start Free Trial
-                </button>
-            </form>
-            <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">
-                No credit card required • 7-day free trial • Cancel anytime
-            </p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>SkillShift</h3>
-                <p>The adaptive AI learning platform for future skills</p>
-            </div>
-            <div class="footer-section">
-                <h3>Product</h3>
-                <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#demo">Demo</a></li>
-                    <li><a href="#enterprise">Enterprise</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Learn</h3>
-                <ul>
-                    <li><a href="#data">Data Skills</a></li>
-                    <li><a href="#ai">AI Skills</a></li>
-                    <li><a href="#climate">Climate Tech</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#careers">Careers</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#privacy">Privacy Policy</a></li>
+                <div class="feature-icon">
